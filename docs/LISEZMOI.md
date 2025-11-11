@@ -38,7 +38,7 @@ Ensuite, pour l'histoire, ce package est utilisé dans la [bibliothèque XSL-Cor
 
 ## Installation
 
-Ce package sera (bientôt) disponible sur Composer. Pour l'installer :
+Ce package est disponible sur Composer. Pour l'installer :
 ```sh
 composer require ls-a/arithmetic-ast
 ```
