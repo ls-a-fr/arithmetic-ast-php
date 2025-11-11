@@ -1,0 +1,56 @@
+{
+    "name": "ls-a/arithmetic-ast",
+    "version": "1.0.0",
+    "description": "Implements the Shunting Yard Algorithm and creates an Abstract Syntax Tree with arithmetic operations",
+    "keywords": [
+        "shunting",
+        "yard",
+        "utils",
+        "arithmetic",
+        "operation",
+        "math",
+        "ast",
+        "comparison"
+    ],
+    "license": "GPL-3.0-or-later",
+    "authors": [
+        {
+            "name": "ls-a",
+            "email": "contact@ls-a.fr"
+        }
+    ],
+    "scripts": {
+        "beautify": "php -d \"xdebug.mode=off\" vendor/bin/pint",
+        "phpstan": "./vendor/bin/phpstan analyse --memory-limit 4096M",
+        "phpcs": "php -d \"xdebug.mode=off\" vendor/bin/phpcs -p -s -d memory_limit=512M src",
+        "analyse": [
+            "@beautify",
+            "@phpstan",
+            "@phpcs"
+        ],
+        "test": [
+            "@beautify",
+            "./vendor/bin/phpunit --bootstrap tests/bootstrap.php tests --display-warnings --display-notices"
+        ]
+    },
+    "require": {
+        "php": "^8.0.0"
+    },
+    "require-dev": {
+        "laravel/pint": "^1.22",
+        "phpstan/phpstan": "^2.1",
+        "phpunit/phpunit": "^12.1",
+        "squizlabs/php_codesniffer": "^4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Lsa\\Arithmetic\\Ast\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Lsa\\Arithmetic\\Ast\\Tests\\": "tests/",
+            "LsaStandard\\": "phpcs/LsaStandard/"
+        }
+    }
+}
