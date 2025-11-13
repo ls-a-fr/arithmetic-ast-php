@@ -242,7 +242,10 @@ final class TokenParserCursor
             $this->inFunction = $row;
 
             $functionClassName = $this->getClassNameFromSymbol($operator);
+            assert(\is_subclass_of($functionClassName, Function_::class) === true);
+            
             /**
+             * Assert is good enough.
              * We could test that, but that would be a waste in performance tests
              *
              * @phpstan-ignore staticMethod.notFound
